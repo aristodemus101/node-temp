@@ -1,22 +1,6 @@
-const os = require('os')
+const _ = require('lodash')
 
-// info about current user
+const items = [1, [2, [3, [4]]]]
 
-const user = os.userInfo()
-console.log(user)
-
-// method retunr the system uptime in seconds
-
-console.log(`The system uptime is: ${os.uptime()} seconds`)
-const currentOs = {
-    name: os.type(),
-    release: os.release(),
-    totalMem: os.totalmem(),
-    freeMem: os.freemem()
-}
-
-console.log(currentOs)
-
-const path = require('path')
-
-console.log(path.sep)
+const newItems = _.flattenDeep(items)
+console.log(newItems)
