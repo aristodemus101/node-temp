@@ -1,7 +1,22 @@
-console.log(__dirname)
+const os = require('os')
 
-const sayHi = (name) => {
-    console.log(`Hey ${name}`);
+// info about current user
+
+const user = os.userInfo()
+console.log(user)
+
+// method retunr the system uptime in seconds
+
+console.log(`The system uptime is: ${os.uptime()} seconds`)
+const currentOs = {
+    name: os.type(),
+    release: os.release(),
+    totalMem: os.totalmem(),
+    freeMem: os.freemem()
 }
 
-sayHi("Kobe")
+console.log(currentOs)
+
+const path = require('path')
+
+console.log(path.sep)
